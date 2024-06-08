@@ -22,7 +22,7 @@ class ATarget
     public:
     ATarget(const std::string& t);
     virtual ~ATarget();
-    std::string const& getType(void) const;
+    const std::string& getType(void) const;
     virtual ATarget* clone() const = 0;
     void getHitBySpell(const ASpell& s) const;
 };
