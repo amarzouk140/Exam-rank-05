@@ -4,22 +4,39 @@
     SpellBook::SpellBook(){}
     SpellBook::SpellBook(const SpellBook& other){(void)other;}
     SpellBook& SpellBook::operator=(const SpellBook&other){(void)other; return *this;}
-    SpellBook::~SpellBook(){}
+    SpellBook::~SpellBook()
+    {
+    for (std::map<std::string, ASpell*>::iterator it = spells.begin(); it != spells.end(); ++it) {
+        delete it->second;
+    }
+    spells.clear();
+    }
 
-    void SpellBook::learnSpell(ASpell* s)
+    void SpellBook::learnSpell(ASpell* spell)
     {
-        if (s)
-        spellB[s->getName()] = s->clone();
+    if (spell) 
+    {
+        if (spells.find(spell->getName()) != spells.end())
+            delete spells[spell->getName()];
+
+        spells[spell->getName()] = spell->clone();
     }
-    void SpellBook::forgetSpell(std::string const &name)
-    {
-        if (spellB.find(name) != spellB.end())
-                spellB.erase(name);
     }
-    ASpell* SpellBook::createSpell(std::string const &name)
+    void SpellBook::forgetSpell(const std::string& name)
     {
-        ASpell *test = NULL;
-        if (spellB.find(name) != spellB.end())
-        test = spellB[name];
-        return test;
+        std::map<std::string, ASpell*>::iterator it = spells.find(name);
+    if (it != spells.end()) 
+    {
+        delete it->second;
+        spells.erase(it);
+    }
+    }
+    ASpell* SpellBook::createSpell(const std::string& name) const
+    {
+        std::map<std::string, ASpell*>::const_iterator it = spells.find(name);
+        if (it != spells.end()) 
+        {
+        return it->second->clone();
+        }
+    return NULL;
     }

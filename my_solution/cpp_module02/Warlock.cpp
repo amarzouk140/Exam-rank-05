@@ -34,16 +34,24 @@
 std::cout << name << ": I am " << name << ", " << title << "!" << std::endl;
     }
 
-    void Warlock::learnSpell(ASpell* s)
-    {
-        S.learnSpell(s);
+void Warlock::learnSpell(ASpell* spell) 
+{
+    if (spell) {
+        spellBook.learnSpell(spell);
     }
-    void Warlock::forgetSpell(std::string name)
+}
+
+void Warlock::forgetSpell(const std::string& spellName) 
+{
+    spellBook.forgetSpell(spellName);
+}
+
+void Warlock::launchSpell(const std::string& spellName, const ATarget& target) 
+{
+    ASpell* spell = spellBook.createSpell(spellName);
+    if (spell) 
     {
-        S.forgetSpell(name);
+        spell->launch(target);
+        delete spell;
     }
-    void Warlock::launchSpell(std::string name, const ATarget& t)
-    {
-        if (S.createSpell(name))
-        S.createSpell(name)->lanuch(t);
-    }
+}

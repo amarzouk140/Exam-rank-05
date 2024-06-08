@@ -22,7 +22,7 @@
         return effects;
     }
 
-    void ASpell::lanuch (const ATarget& t) const
+    void ASpell::launch (const ATarget& t) const
     {
         t.getHitBySpell(*this);
     }

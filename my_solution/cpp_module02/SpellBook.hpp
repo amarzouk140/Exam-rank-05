@@ -16,15 +16,15 @@ class SpellBook
     private:
     SpellBook(const SpellBook& other);
     SpellBook& operator=(const SpellBook&other);
-    std::map <std::string, ASpell*> spellB;
+    std::map <std::string, ASpell*> spells;
 
     public:
     SpellBook();
     ~SpellBook();
 
     void learnSpell(ASpell*);
-    void forgetSpell(std::string const &name);
-    ASpell* createSpell(std::string const &name);
+    void forgetSpell(const std::string& name);
+    ASpell* createSpell(const std::string&name) const;
 
 };
 #endif 

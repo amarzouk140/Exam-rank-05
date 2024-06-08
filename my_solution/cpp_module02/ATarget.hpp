@@ -12,16 +12,18 @@ class ASpell;
 class ATarget
 {
     protected:
+    std::string type;
+
+    private:
     ATarget();
     ATarget(const ATarget& other);
     ATarget& operator=(const ATarget&other);
-    std::string type;
 
     public:
     ATarget(const std::string& t);
     virtual ~ATarget();
     std::string const& getType(void) const;
-    virtual ATarget* clone() = 0;
+    virtual ATarget* clone() const = 0;
     void getHitBySpell(const ASpell& s) const;
 };
 #endif 

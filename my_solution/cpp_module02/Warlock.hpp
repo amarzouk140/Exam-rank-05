@@ -9,6 +9,7 @@
 #include "ATarget.hpp"
 #include "SpellBook.hpp"
 
+
 class Warlock
 {
     private:
@@ -17,8 +18,8 @@ class Warlock
     Warlock& operator=(const Warlock&other);
     std::string name;
     std::string title;
-    SpellBook S;
-    
+    SpellBook spellBook;
+
     public:
     Warlock(const std::string& n, const std::string& t);
     ~Warlock();
@@ -29,7 +30,7 @@ class Warlock
     void introduce() const;
 
     void learnSpell(ASpell* s);
-    void forgetSpell(std::string name);
-    void launchSpell(std::string name, const ATarget& t);
+    void forgetSpell(const std::string& name);
+    void launchSpell(const std::string& name, const ATarget& t);
 };
 #endif 
