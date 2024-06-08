@@ -7,8 +7,8 @@ class Dummy : public ATarget
 {
     public:
     Dummy();
-    ~Dummy();
-    virtual Dummy* clone();
+    virtual ~Dummy();
+    virtual ATarget* clone() const;
 };
 
 #endif

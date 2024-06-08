@@ -16,7 +16,7 @@ class Warlock
     Warlock& operator=(const Warlock&other);
     std::string name;
     std::string title;
-    std::map <std::string, ASpell*> spellBook;
+    std::map <std::string, ASpell*> spells;
 
     public:
     Warlock(const std::string& n, const std::string& t);
@@ -28,7 +28,7 @@ class Warlock
     void introduce() const;
 
     void learnSpell(ASpell* s);
-    void forgetSpell(std::string name);
-    void launchSpell(std::string name, const ATarget& t);
+    void forgetSpell(const std::string& name);
+    void launchSpell(const std::string& name, const ATarget& t);
 };
 #endif 
