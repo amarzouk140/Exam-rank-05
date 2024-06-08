@@ -12,7 +12,7 @@
     }
     ATarget::~ATarget()
     {    }
-    std::string const& ATarget::getType(void) const
+    const std::string& ATarget::getType(void) const
     {
         return type;
     }

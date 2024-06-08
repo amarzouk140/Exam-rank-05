@@ -63,5 +63,5 @@ std::cout << name << ": I am " << name << ", " << title << "!" << std::endl;
     void Warlock::launchSpell(const std::string& name, const ATarget& t)
     {
         if (spells.find(name) != spells.end())
-        spells[name]->lanuch(t);
+        spells[name]->launch(t);
     }

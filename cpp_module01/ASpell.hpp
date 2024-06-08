@@ -28,6 +28,6 @@ class ASpell
     const std::string& getEffects(void) const;
     virtual ASpell* clone() const = 0;
 
-    void lanuch (const ATarget& t) const;
+    void launch (const ATarget& t) const;
 };
 #endif 

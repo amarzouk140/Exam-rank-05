@@ -2,8 +2,16 @@
 
 
     ASpell::ASpell(){}
-    ASpell::ASpell(const ASpell& other){(void)other;}
-    ASpell& ASpell::operator=(const ASpell&other){(void)other; return *this;}
+    ASpell::ASpell(const ASpell& other) : name(other.name), effects(other.effects) {}
+    ASpell& ASpell::operator=(const ASpell&other)
+    {    
+    if (this != &other) 
+    {
+        name = other.name;
+        effects = other.effects;
+    }
+    return *this;
+    }
 
 
     ASpell::ASpell(const std::string& n, const std::string& t)
@@ -22,7 +30,7 @@
         return effects;
     }
 
-    void ASpell::lanuch (const ATarget& t) const
+    void ASpell::launch (const ATarget& t) const
     {
         t.getHitBySpell(*this);
     }
