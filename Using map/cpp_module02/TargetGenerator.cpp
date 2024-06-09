@@ -32,7 +32,7 @@
         targets.erase(it);
     }
     }
-    ATarget* TargetGenerator::createTarget(std::string const &name) const
+    ATarget* TargetGenerator::createTarget(std::string const &name)
     {
         std::map<std::string, ATarget*>::const_iterator it = targets.find(name);
         if (it != targets.end()) 

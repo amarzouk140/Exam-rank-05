@@ -31,7 +31,7 @@
         spells.erase(it);
     }
     }
-    ASpell* SpellBook::createSpell(const std::string& name) const
+    ASpell* SpellBook::createSpell(const std::string& name)
     {
         std::map<std::string, ASpell*>::const_iterator it = spells.find(name);
         if (it != spells.end()) 

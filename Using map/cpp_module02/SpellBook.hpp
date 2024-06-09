@@ -24,7 +24,7 @@ class SpellBook
 
     void learnSpell(ASpell*);
     void forgetSpell(const std::string& name);
-    ASpell* createSpell(const std::string&name) const;
+    ASpell* createSpell(const std::string&name);
 
 };
 #endif 

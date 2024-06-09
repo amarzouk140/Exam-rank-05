@@ -21,14 +21,14 @@ class Warlock
     public:
     Warlock(const std::string& n, const std::string& t);
     ~Warlock();
-    std::string const& getName(void) const;
-    std::string const& getTitle(void) const;
+    const std::string& getName(void) const;
+    const std::string& getTitle(void) const;
 
     void setTitle(const std::string& t);
     void introduce() const;
 
     void learnSpell(ASpell* s);
-    void forgetSpell(const std::string& name);
-    void launchSpell(const std::string& name, const ATarget& t);
+    void forgetSpell(const std::string name);
+    void launchSpell(const std::string name, const ATarget& t);
 };
 #endif 

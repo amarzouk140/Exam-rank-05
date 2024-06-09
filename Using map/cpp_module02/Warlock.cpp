@@ -41,12 +41,12 @@ void Warlock::learnSpell(ASpell* spell)
     }
 }
 
-void Warlock::forgetSpell(const std::string& spellName) 
+void Warlock::forgetSpell(const std::string spellName) 
 {
     spellBook.forgetSpell(spellName);
 }
 
-void Warlock::launchSpell(const std::string& spellName, const ATarget& target) 
+void Warlock::launchSpell(const std::string spellName, const ATarget& target) 
 {
     ASpell* spell = spellBook.createSpell(spellName);
     if (spell) 
