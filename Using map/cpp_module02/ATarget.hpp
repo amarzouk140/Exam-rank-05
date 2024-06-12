@@ -14,12 +14,11 @@ class ATarget
     protected:
     std::string type;
 
-    private:
+    public:
     ATarget();
     ATarget(const ATarget& other);
     ATarget& operator=(const ATarget&other);
 
-    public:
     ATarget(const std::string& t);
     virtual ~ATarget();
     const std::string& getType(void) const;
