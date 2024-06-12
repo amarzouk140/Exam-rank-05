@@ -42,13 +42,10 @@
     {
      if (s) 
      {
-        // Check if the spell already exists in the map
-        if (spells.find(s->getName()) != spells.end()) {
-            // Delete the old spell to prevent memory leak
-            delete spells[s->getName()];
+        if (spells.find(s->getName()) == spells.end()) 
+        {
+            spells[s->getName()] = s->clone();
         }
-        // Clone the new spell and add it to the map
-        spells[s->getName()] = s->clone();
     }
     }
     void Warlock::forgetSpell(const std::string name)
