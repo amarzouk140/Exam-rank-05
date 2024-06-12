@@ -15,12 +15,10 @@ class ASpell
     std::string name;
     std::string effects;
 
-    private:
+    public:
     ASpell();
     ASpell(const ASpell& other);
     ASpell& operator=(const ASpell&other);
-
-    public:
     ASpell(const std::string& n, const std::string& t);
     virtual ~ASpell();
 
