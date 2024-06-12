@@ -2,8 +2,15 @@
 
 
     ATarget::ATarget(){}
-    ATarget::ATarget(const ATarget& other){(void)other;}
-    ATarget& ATarget::operator=(const ATarget&other){(void)other; return *this;}
+    ATarget::ATarget(const ATarget& other): type(other.type) {}
+    ATarget& ATarget::operator=(const ATarget&other)
+    {
+    if (this != &other) 
+    {
+        this->type = other.type;
+    }
+    return *this; 
+    }
 
 
     ATarget::ATarget(const std::string& t)
